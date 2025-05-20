@@ -3,31 +3,26 @@ using namespace std;
 
 int main() {
     int m = 2, n = 3;
-    int A[m][n] = {
+    int a[m][n] = {
         {3, 7, 5},
         {2, 9, 4}
     };
-
-    int maxVal = A[0][0];
-    int minVal = A[0][0];
-    int cari = 9;
+    int max = a[0][0];
+    int min = a[0][0];
+    int cari = 5;
     bool ditemukan = false;
-
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            if (A[i][j] > maxVal) maxVal = A[i][j];
-            if (A[i][j] < minVal) minVal = A[i][j];
-            if (A[i][j] == cari) ditemukan = true;
+            if (a[i][j] > max) max = a[i][j];
+            if (a[i][j] < min) min = a[i][j];
+            if (a[i][j] == cari) ditemukan = true;
         }
     }
-
-    cout << "Nilai maksimum: " << maxVal << endl;
-    cout << "Nilai minimum: " << minVal << endl;
-
+    cout << "Nilai maksimum: " << max << endl;
+    cout << "Nilai minimum: " << min << endl;
     if (ditemukan)
         cout << "Nilai " << cari << " ditemukan dalam matriks." << endl;
     else
         cout << "Nilai " << cari << " tidak ditemukan." << endl;
-
     return 0;
 }
